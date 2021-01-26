@@ -1,0 +1,361 @@
+""" Un gran problema en JS es declarar variable con la palabra 'var', de esta
+" manera se puede redeclarar una variable sin un error
+
+// ES5
+var camper = 'James';
+var camper = 'David';
+console.log(camper); // logs 'David'
+
+" En una aplicación pequeña puede que esto no suceda, pero es potencialmente un
+" gran problema para la escalabilidad de una aplicación. Para evitar esto se
+" puede utilizar la palabra clave 'let' para declarar una variable.
+
+// ES6
+let camper = 'James';
+let camper = 'David'; // throws an error
+
+" La palabra clave 'let' permite a una varible ser declarada una única vez,
+" tabién hace que esa variable sea accesible solamente por medio de una porción
+" de código que esté al mismo nivel de anidamiento que 'let' (en el mismo
+" 'scope'), ya que las variables declaradas con 'var' son globales.
+"
+"  Una buena práctica es utilizar  '"use strict"' como encabezado de nuestro
+"  archivo JS, esto habilita el módo estricto de JS que recoge diferentes
+"  errores de código prácticas poco seguras, por ejemplo:
+
+// ES6
+"use strict";
+x = 3.14; // throws an error because x is not declared
+
+" Otra nueva palabra clave de ES6 es 'const', tiene las mismas ventajas que
+" 'let' y al mismo tiempo una variable con decalarada con esta palabra clave no
+" puede ser reasignada.
+
+// ES6
+const FAV_PET = 'Cats';
+FAV_PET = 'Dogs'; // returns error
+
+" Una práctica común es nombrar las constantes declaradas por medio de letras
+" mayúsculas y guiones bajo para separar las palabras.
+"
+" Los objetos declarados con 'const' no pueden ser reasignados, pero sus
+" atributos no son inmutables. 
+
+// ES6
+const s = [5,6,7];
+s = [1, 2, 3]; // throws error, trying to assign a const
+s[2] = 45; // works just as it would with an array declared with 'var' or 'let'
+
+" Un método que podemos utilizar para evitar este comportamiento no deseado es
+" el método '.freeze([obj])'.
+
+
+let obj = {
+  name:"FreeCodeCamp",
+  review:"Awesome"
+};
+Object.freeze(obj);
+obj.review = "bad"; // will be ignored. Mutation not allowed
+obj.newProp = "Test"; // will be ignored. Mutation not allowed
+console.log(obj); // { name: "FreeCodeCamp", review:"Awesome"}
+
+
+
+""" En JS podemos utilizar funciones anónimas, son útiles especialmente cuando
+" pasamos una función como argumento de otra, para hacer esto utilizamos la
+" siguiente sintaxis.
+
+// ES5
+const myFunc = funcion() {
+  const myVar = 'value';
+  return myVar;
+}
+
+" ES6 tiene una sintaxis reducida para crear funciones anónimas, se llamas
+" funciones de flecha.
+
+// ES6
+const myFunc = () => {
+  const myVar = "vale";
+  return myVar;
+}
+
+" Cuando la función no tiene cuerpo y solo un 'return' se puede incluso reducir
+" las llaves.
+
+// ES6
+const myFunc = () => "value";
+
+" Para pasarle parametros a una función de flecha se hace como se esperaría de
+" manera normal.
+
+// ES6
+const multiplier = (item, multi) => item * multi;
+multiplier(4, 2) // returns 8
+
+" Si la función de flecha solo tiene un parámetro se pude omitir los
+" parentesis.
+
+// ES6
+const doubler = item => item * 2;
+
+" También se le puede pasar un parámetro de 'default'
+
+// ES6
+const greeting = (name = "Anonymus") => "Hello " + name;
+
+" En función de crear funcionalidades más flexibles ES6 introdujo el 'rest
+" parameter' con este parametro puedes crear funciones que tomen un numero
+" variable de argumentos.
+
+// ES6
+function howMany(...args) {
+  return "You have passed " + args.length + " arguments.";
+}
+console.log(howMany(0, 1, 2)); // You have passed 3 arguments.
+console.log(howMany("string", null, [1, 2, 3], { })); 
+// You have passed 4 arguments.
+
+" En un contexto de arrays la misma notación se conoce como 'spread operator'
+" devido a que al pasar un array como argumento se estaría 'desfoldando' y se
+" pasarían los valores del array como si fueran argumentos separados por comas
+
+
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr); // returns 89
+
+" El operador 'spread' solo funciona como un argumento de una función
+
+const spreaded = ...arr; // will throw a syntax error
+
+
+
+""" ES6 también tiene una sintaxis para asignar valores desconstruyento
+" objetos.
+
+const user = { name: 'John Doe', age: 34 };
+
+// ES5
+const name = user.name; // name = 'John Doe'
+const age = user.age; // age = 34
+
+// ES6
+const { name, age } = user; // name = 'John Doe', age = 34
+
+" Al desconstruir también se asignar un nuevo nombre a la variable.
+
+// ES6
+const { name: userName, age: userAge } = user;
+// userName = 'John Doe', userAge = 34
+
+" También se puede desconstruir un objeto con objetos anidados.
+
+const user = {
+  johnDoe: { 
+    age: 34,
+    email: 'johnDoe@freeCodeCamp.com'
+  }
+};
+
+// ES6
+const { johnDoe: { age, email }} = user;
+
+" O alternativamente.
+
+// ES6
+const { johnDoe: { age: userAge, email: userEmail }} = user;
+
+
+
+""" Desconstruir array es tan fácil como desconstruir objetos. Una diferencia
+" clave entre descontruir un array y el operador 'spread' es que este operador
+" desempaca todo el contenido en una lista de valores separados por comas, tu
+" no puedes escoger el elemento que quierar asignar a una variable,
+" desconstruyendo un array tu puedes hacer exactamente esto.
+
+const [a, b] = [1, 2, 3, 4, 5, 6];
+console.log(a, b); // 1, 2
+
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c); // 1, 2, 5
+
+" También podemos combinar la desonstrucción de un array con el uso del
+" operador 'spread' el resultado es similar a 'Array.prototype.slice()'
+
+const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+console.log(a, b); // 1, 2
+console.log(arr); // [3, 4, 5, 7]
+
+" También puedes desconstruir un objeto para pasarle los valores como
+" parametros de una función.
+
+// ES5
+const profileUpdate = (profileData) => {
+  const { name, age, nationality, location } = profileData;
+  // do something with these variables
+}
+
+// ES6
+const profileUpdate = ({ name, age, nationality, location }) => {
+  /* do something with these fields */
+}
+
+
+
+""" Otra nueva función en ES6 son los 'template literal', es una especie
+" especial de string al que se le pueden pasar variables, también captura todos
+" los tipos de caracteres invisibles.
+
+
+const person = {
+  name: "Zodiac Hasbro",
+  age: 56
+};
+
+// Template literal with multi-line and string interpolation
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+console.log(greeting); // prints
+// Hello, my name is Zodiac Hasbro!
+// I am 56 years old.
+
+
+
+""" ES6 también añade soporte para definir objetos literales de una manera más
+" simple.
+
+// ES5
+const getMousePosition = (x, y) => ({
+  x: x,
+  y: y
+});
+
+// ES6
+const getMousePosition = (x, y) => ({ x, y });
+
+
+
+""" De igual manera podemos omitir la palabra clave 'function' en la definición
+" de funciones de objetos y el doble punto.
+
+// ES5
+const person = {
+  name: "Taylor",
+  sayHello: function() {
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+
+// ES6
+const person = {
+  name: "Taylor",
+  sayHello() {
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+
+
+
+""" ES6 también proveé una nueva sintaxis para crear objetos, utiliza la
+" palabra clave 'class'. Cave destacar que la palabra reservada 'class' solo es
+" por sintaxis ya que JS no tiene un paradigma orientado a objetos, por lo que
+" se tiene que saber que la implementación que se hará seguirá siendo un objeto
+" con un prototipo.
+
+// ES5
+var SpaceShuttle = function(targetPlanet){
+  this.targetPlanet = targetPlanet;
+}
+var zeus = new SpaceShuttle('Jupiter');
+
+// ES6
+class SpaceShuttle {
+  constructor(targetPlanet) {
+    this.targetPlanet = targetPlanet;
+  }
+}
+const zeus = new SpaceShuttle('Jupiter');
+
+" Puedes obtener el comportamiento clasico de un getter y un setter con las
+" siguientes palabras clave.
+
+// ES
+class Book {
+  constructor(author) {
+    this._author = author;
+  }
+  // getter
+  get writer() {
+    return this._author;
+  }
+  // setter
+  set writer(updatedAuthor) {
+    this._author = updatedAuthor;
+  }
+}
+const novel = new Book('anonymous');
+console.log(novel.writer);  // anonymous
+novel.writer = 'newAuthor';
+console.log(novel.writer);  // newAuthor
+
+
+
+""" Con ES6 se pueden crear modulos de scripts en html de la siguiente manera.
+
+<script type="module" src="filename.js"></script>
+
+" También se pueden exportar funciones, objetos, o variables de un archivo;
+" para hacer esto primero tenemos que exportar los objetos que queremos,
+" ingresando la siguiente estructura en el archivo en donde se encuntran los
+" objetos que queremos exportar.
+
+export const add = (x, y) => {
+  return x + y;
+}
+
+" Podemos exportar objeto por objeto, o podemos crear un 'export statement',
+" este último puede tener todos los objetos que queramos, solo se tienen que
+" declarar separados por comas.
+
+const add = (x, y) => {
+  return x + y;
+}
+
+export { add };
+
+" Para importar los archios de debe de poder en la cabezera del archivo al que
+" vamos a importar la siguiente estructura.
+
+import { [objects, functions] } from './[path]';
+
+" También se puede importar todo un archivo de la siguiente manera.
+
+import * as [Module_Name] from "./[path]";
+
+" También se puede tener un 'export default', esta practica se utiliza
+" generalmente cuando solo se quiere exportar una función u objeto de un
+" archivo,  para hacer esto se necesitar la siguiente sentencia.
+
+// named function
+export default function add(x, y) {
+  return x + y;
+}
+
+// anonymous function
+export default function(x, y) {
+  return x + y;
+}
+
+" Solo se puede tener un 'export default' por módulo o por archivo,
+" adicionalmente, no se puede usar 'export default' con 'var, let, const'.
+"
+" Para importar un 'export default' se necesita la siguiente estructura.
+
+import funcion from "./[path]";
+
+" Notese que no se necesita declarar entre llaves {}
+
+" !Falta sección sobre 'promesas', documentar de curso 'JavaScript Algorithms
+" and Data Structures' de 'freeCodeCamp', sección ES6, lección 'Create
+" a JavaScript Promise' en adelante

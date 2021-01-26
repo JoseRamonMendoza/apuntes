@@ -1,0 +1,56 @@
+" La normalización de bases de datos es un proceso que consiste en designar
+y aplicar una serie de reglas a las relaciones obtenidas tras el paso del
+modelo entidad-relación al modelo relacional. Con objeto de miminizar la
+redundancia de datos, facilitando su gestión posterior.
+
+""" 1FN
+
+La primera regla de normalización se expresa en forma de dos indicaciones
+separadas: 
+
+  1: Todos los atributos, valores almacenados en las columnas, deben ser
+     indivisibles.
+  2: No deben existir grupos de valores repetidos.
+
+El valor de una columna debe ser una 'entidad atómica', indivisible, excluyendo
+así las dificultades que podrían conllevar el tratamiento de un dato formado de
+varias partes.
+
+Supongamos que se tiene una columna 'Dirección' para almacenar la dirección
+completa, dato que se compondría del nombre de la calle, el número exterior, el
+número interior (puerta), el código postal, el estado y la capital.
+
+Una tabla con esta estructura platea problemas a la hora de recuperar
+información; imaginemos que queremos hacer un calculo de todas las personas que
+vivien en una determinada población, si todo vienen en un solo campo sería
+demasiado difícil el aislar la población dentro del campo. Si tranformamos la
+dirección en su misma tabla habrán más columnas pero cada una de ellas
+contendrá un valor simple e indivisible que acilitará la relación de las
+operaciones antes mencionadas.
+
+En cuanto a la segunda indicación, se debe evitar la repetición de los datos de
+la población y provincia en cada una de las filas. Siempre que al mostrar la
+información de una tabla aparezcan datos repetidos existe la posibilidad de
+crear una tabla independiente con ellos.
+
+""" 2FN
+
+Además de cumplir con las dos reglas del punto previo, la segunda forma normal
+añade la necesidad de que no existan 'dependencias funcionales parciales'. Esto
+significa que todos los valores de las columnas de una fila deben depender de
+la clave primaria de dicha fila, entendiendo por clave primaria los valores de
+todas las columnas que la formen, en caso de ser más de una.
+
+Las tablas que están ajustadas a la primera forma normal, y además disponen de
+una clave primaria formada por una única columna con valor indivisible, cumplen
+ya con la segunda forma normal. Ésta afecta exclusivamente a las tablas en las
+que la clave primaria está formada por los valores de dos o más columnas,
+debiendo asegurarse, en este caso, que todas las demás columnas son accesibles
+a través de la clave completa y nunca mediante una parte de esa calve.
+
+""" 3FN
+
+En cuanto a la tercera forma normal, ésta indica que no deben existir
+'dependencias transitivas entre las columnas de una tabla', lo que significa
+que las columnas que no forman parte de la clave primaria deben depender sólo
+de la clave, nunca de otra columna no clave.
