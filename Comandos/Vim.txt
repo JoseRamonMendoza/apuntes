@@ -2,7 +2,7 @@
 
 Para ejecutar Vim desde Bash: vim 'Nombre Archivo'
 
-Para moverse por la pantalla: 'k arriva' 'l derecha' 'j abajo' 'h izquierda'
+Para moverse por la pantalla: 'k arriba' 'l derecha' 'j abajo' 'h izquierda'
 			      '0' para moverte al principio de la linea
 			      '$' para moverte al final de la linea
 			      'w' para moverte al principio de la palabra siguiente
@@ -15,11 +15,11 @@ Para salir de Vim: [Esc] :q! [Enter] Salir sin guardar
 
 
 
-" Para incertar texto: 'i' para incertar en la posición del cursor
-		     'a' para incertar después de la posición del cursor
-		     'A' para incertar al final de la linea 
-		     'o' para incertar una linea abajo de la posición del cursor
-		     'O' para incertar una linea arriba de la posicion del cursor
+" Para insertar texto: 'i' para insertar en la posición del cursor
+		     'a' para insertar después de la posición del cursor
+		     'A' para insertar al final de la linea 
+		     'o' para insertar una linea abajo de la posición del cursor
+		     'O' para insertar una linea arriba de la posición del cursor
 		     'y' copiar
 		     'd' cortar
          'p' pegar
@@ -27,7 +27,7 @@ Para salir de Vim: [Esc] :q! [Enter] Salir sin guardar
              en modo viual 'v' se puede seleccionar un texto y copiarlo con: "*y
 
 
-Nota: i para modo incertar
+Nota: i para modo insertar
       v para modo visual
       Esc para modo normal
       R para modo remplazar
@@ -42,7 +42,7 @@ Nota: i para modo incertar
 
 
 
-" Eliminar texto y reemplazar texto: 'x' eliminar el caracter que se encuentra encima del cursor 
+" Eliminar texto y reemplazar texto: 'x' eliminar el carácter que se encuentra encima del cursor 
 				   'd' es el comando para eliminar texto se puede usar con un 'Movimiento'
 				   'dw' que eliminará la palabra
 				   'de' que eliminará de donde está el cursor al final de esa misma palabra
@@ -51,8 +51,8 @@ Nota: i para modo incertar
 				   'r' para reemplazar una letra
 				   'R' para entrar en modo reemplazar
 				   'c' es el comando para cambiar texto se puede usar con un 'Movimiento'
-				   'ce' eliminará de donde está el cursor al final de esa misma palabra y pasará al modo incertar
-				   'c$' eliminará donde está el curson hasta al final de la linea y pasará al modo incertar
+				   'ce' eliminará de donde está el cursor al final de esa misma palabra y pasará al modo insertar
+				   'c$' eliminará donde está el cursor hasta al final de la linea y pasará al modo insertar
 
 
 
@@ -62,17 +62,17 @@ Deshacer acciones: 'u' para deshacer la última acción
 
 
 
-Localización del cursor: 'Ctrl-G' muestra la locaclización del cursos
+Localización del cursor: 'Ctrl-G' muestra la localización del cursos
 			 'G' mover al final del archivo
 			 '[num] G' mover al nÃºmero de fila
 			 'gg' mover al principio del archivo
 
 
 
-Busqueda de texto: '/ [frase]' busqueda hacia adelante en el texto
-		   '? [frase]' busqueda hacia atras en el texto
-		   'n' siguiente ocurrencia en busqueda en la misma dirección
-		   'N' siguiente ocurrencia en busqueda en la dirección contraria
+Búsqueda de texto: '/ [frase]' búsqueda hacia adelante en el texto
+		   '? [frase]' búsqueda hacia atras en el texto
+		   'n' siguiente ocurrencia en búsqueda en la misma dirección
+		   'N' siguiente ocurrencia en búsqueda en la dirección contraria
 		   'Ctrl-O' regresas a la posición anterior
 		   'Ctrl-I' tomas la posición siguiente
 
@@ -80,13 +80,13 @@ Busqueda de texto: '/ [frase]' busqueda hacia adelante en el texto
 "Paneles y ventanas
       sp divide el panel de manera horizontal
       vsp divide el panel de manera vertical
-      <c-w>w mover etre paneles
+      <c-w>w mover entre paneles
       <c-w>j ir al panel de abajo
       <c-w>k ir al panel de arriba
       <c-w>h ir al panel de la izquierda
       <c-w>l ir al panel de la derecha
       <c-w>c cerrar el panel, también funciona :cl
-      <c-w>o mantener el panel activo y cerrar todos los demas, también
+      <c-w>o mantener el panel activo y cerrar todos los demás, también
              funciona :on
 
 
@@ -98,7 +98,7 @@ Dentro de "(), [], {}" se pude presionar '%' para ir a su signo conector, es úti
 :s/old/new/g      Sustituye todas las coincidencias de 'old' con 'new' en la linea del cursor
 :#,#s/onld/new/g  Sustituye la frase entre dos # con new
 :%s/old/new/g     Sustituye todas las ocurrencias de 'old' en el archivo por 'new'
-:%s/old/new/gc    Sustituye todas las occurencias de 'old' en el archivo por 'new' y pregunta antes de hacer el cambio
+:%s/old/new/gc    Sustituye todas las ocurrencias de 'old' en el archivo por 'new' y pregunta antes de hacer el cambio
 
 
 

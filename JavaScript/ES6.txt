@@ -14,8 +14,8 @@ console.log(camper); // logs 'David'
 let camper = 'James';
 let camper = 'David'; // throws an error
 
-" La palabra clave 'let' permite a una varible ser declarada una única vez,
-" tabién hace que esa variable sea accesible solamente por medio de una porción
+" La palabra clave 'let' permite a una variable ser declarada una única vez,
+" también hace que esa variable sea accesible solamente por medio de una porción
 " de código que esté al mismo nivel de anidamiento que 'let' (en el mismo
 " 'scope'), ya que las variables declaradas con 'var' son globales.
 "
@@ -28,7 +28,7 @@ let camper = 'David'; // throws an error
 x = 3.14; // throws an error because x is not declared
 
 " Otra nueva palabra clave de ES6 es 'const', tiene las mismas ventajas que
-" 'let' y al mismo tiempo una variable con decalarada con esta palabra clave no
+" 'let' y al mismo tiempo una variable con declarada con esta palabra clave no
 " puede ser reasignada.
 
 // ES6
@@ -86,7 +86,7 @@ const myFunc = () => {
 // ES6
 const myFunc = () => "value";
 
-" Para pasarle parametros a una función de flecha se hace como se esperaría de
+" Para pasarle parámetros a una función de flecha se hace como se esperaría de
 " manera normal.
 
 // ES6
@@ -94,7 +94,7 @@ const multiplier = (item, multi) => item * multi;
 multiplier(4, 2) // returns 8
 
 " Si la función de flecha solo tiene un parámetro se pude omitir los
-" parentesis.
+" paréntesis.
 
 // ES6
 const doubler = item => item * 2;
@@ -105,7 +105,7 @@ const doubler = item => item * 2;
 const greeting = (name = "Anonymus") => "Hello " + name;
 
 " En función de crear funcionalidades más flexibles ES6 introdujo el 'rest
-" parameter' con este parametro puedes crear funciones que tomen un numero
+" parameter' con este parámetro puedes crear funciones que tomen un numero
 " variable de argumentos.
 
 // ES6
@@ -130,7 +130,7 @@ const spreaded = ...arr; // will throw a syntax error
 
 
 
-""" ES6 también tiene una sintaxis para asignar valores desconstruyento
+""" ES6 también tiene una sintaxis para asignar valores deconstruyendo
 " objetos.
 
 const user = { name: 'John Doe', age: 34 };
@@ -142,13 +142,13 @@ const age = user.age; // age = 34
 // ES6
 const { name, age } = user; // name = 'John Doe', age = 34
 
-" Al desconstruir también se asignar un nuevo nombre a la variable.
+" Al deconstruir también se asignar un nuevo nombre a la variable.
 
 // ES6
 const { name: userName, age: userAge } = user;
 // userName = 'John Doe', userAge = 34
 
-" También se puede desconstruir un objeto con objetos anidados.
+" También se puede deconstruir un objeto con objetos anidados.
 
 const user = {
   johnDoe: { 
@@ -167,11 +167,11 @@ const { johnDoe: { age: userAge, email: userEmail }} = user;
 
 
 
-""" Desconstruir array es tan fácil como desconstruir objetos. Una diferencia
-" clave entre descontruir un array y el operador 'spread' es que este operador
+""" Deconstruir array es tan fácil como deconstruir objetos. Una diferencia
+" clave entre deconstruir un array y el operador 'spread' es que este operador
 " desempaca todo el contenido en una lista de valores separados por comas, tu
 " no puedes escoger el elemento que quierar asignar a una variable,
-" desconstruyendo un array tu puedes hacer exactamente esto.
+" deconstruyendo un array tu puedes hacer exactamente esto.
 
 const [a, b] = [1, 2, 3, 4, 5, 6];
 console.log(a, b); // 1, 2
@@ -179,15 +179,15 @@ console.log(a, b); // 1, 2
 const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
 console.log(a, b, c); // 1, 2, 5
 
-" También podemos combinar la desonstrucción de un array con el uso del
+" También podemos combinar la deconstrucción de un array con el uso del
 " operador 'spread' el resultado es similar a 'Array.prototype.slice()'
 
 const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
 console.log(a, b); // 1, 2
 console.log(arr); // [3, 4, 5, 7]
 
-" También puedes desconstruir un objeto para pasarle los valores como
-" parametros de una función.
+" También puedes deconstruir un objeto para pasarle los valores como
+" parámetros de una función.
 
 // ES5
 const profileUpdate = (profileData) => {
@@ -277,7 +277,7 @@ class SpaceShuttle {
 }
 const zeus = new SpaceShuttle('Jupiter');
 
-" Puedes obtener el comportamiento clasico de un getter y un setter con las
+" Puedes obtener el comportamiento clásico de un getter y un setter con las
 " siguientes palabras clave.
 
 // ES
@@ -301,13 +301,13 @@ console.log(novel.writer);  // newAuthor
 
 
 
-""" Con ES6 se pueden crear modulos de scripts en html de la siguiente manera.
+""" Con ES6 se pueden crear módulos de scripts en html de la siguiente manera.
 
 <script type="module" src="filename.js"></script>
 
 " También se pueden exportar funciones, objetos, o variables de un archivo;
 " para hacer esto primero tenemos que exportar los objetos que queremos,
-" ingresando la siguiente estructura en el archivo en donde se encuntran los
+" ingresando la siguiente estructura en el archivo en donde se encuentran los
 " objetos que queremos exportar.
 
 export const add = (x, y) => {
@@ -324,7 +324,7 @@ const add = (x, y) => {
 
 export { add };
 
-" Para importar los archios de debe de poder en la cabezera del archivo al que
+" Para importar los archivos de debe de poder en la cabecera del archivo al que
 " vamos a importar la siguiente estructura.
 
 import { [objects, functions] } from './[path]';
@@ -359,3 +359,4 @@ import funcion from "./[path]";
 " !Falta sección sobre 'promesas', documentar de curso 'JavaScript Algorithms
 " and Data Structures' de 'freeCodeCamp', sección ES6, lección 'Create
 " a JavaScript Promise' en adelante
+

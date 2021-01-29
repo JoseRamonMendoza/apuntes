@@ -1,4 +1,4 @@
-""" Directorios base de Linux
+" Organización de las carpetas del sistema
 
 /bin/: comandos básicos para todos los usuarios del sistema.
 /boot/: archivos estáticos necesarios para el arranque del sistema.
@@ -17,7 +17,7 @@
   software instalado en el sistema.
 /var/: directorio para los spoolers de impresión, ficheros de log, etc.
 
-""" Direcotrios importantes de para la configuración de los usuarios y los grupos
+""" Directorios importantes de para la configuración de los usuarios y los grupos
 en Linux
 
 /etc/passwd: información (nombre,directorio home, ...) del usuario.

@@ -1,4 +1,4 @@
-" Comandos básicos estadar de Tmux
+" Comandos básicos estándar de Tmux
 C-b   (Ctrl + b) Es un prefijo para cualquier comando de tmux, -gracias al archivo de
 configuraciones también se puede pasar C-a como prefijo para hacer una acción-.
 c     Crea otra ventana nueva.

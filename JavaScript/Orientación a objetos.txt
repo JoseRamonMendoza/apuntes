@@ -8,7 +8,7 @@ let duck = {
 
 
 
-""" Para aceder a los atributos de un objeto se puede utilizar la notación de
+""" Para acceder a los atributos de un objeto se puede utilizar la notación de
 " punto
 
 console.log(duck.name); // This prints 'Aflac' to the console

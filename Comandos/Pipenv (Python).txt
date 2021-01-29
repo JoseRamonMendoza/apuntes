@@ -1,0 +1,18 @@
+" Comandos básicos de 'pipenv'
+
+pipenv : prefijo necesario para ejecutar acciones en pipenv, (pipenv [opción[)
+shell : genera un entorno virtual activado
+lock -r : Define versiones
+uninstall <paquete> : Desisntala paquetes
+install <paquete> : Instala paquetes
+intall --dev : Instalar paquete en local
+intall -r <requirements.txt> : Instalar paquetes del archivo 'requirements.txt',
+-el generar un archivo con el nombre 'requirements.txt' es una convención
+ampliamente utilizada, pero no un requerimiento-.
+
+
+graph : Genera un árbol de módulos
+check : Revisión de seguridad en módulos
+install --ignore-pipfile : Utilizado para desplegar aplicaciones
+exit : Salir del entorno virtual
+--rm : Remover entorno virtual
