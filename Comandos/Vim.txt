@@ -2,36 +2,50 @@
 
 Para ejecutar Vim desde Bash: vim 'Nombre Archivo'
 
-Para moverse por la pantalla: 'k arriba' 'l derecha' 'j abajo' 'h izquierda'
-			      '0' para moverte al principio de la linea
-			      '$' para moverte al final de la linea
-			      'w' para moverte al principio de la palabra siguiente
-			      'e' para moverte al final de la palabra actual o la siguiente
-
-
 
 Para salir de Vim: [Esc] :q! [Enter] Salir sin guardar
 		   [Esc] :wq [Enter] Guardar y salir
 
 
-
-" Para insertar texto: 'i' para insertar en la posición del cursor
-		     'a' para insertar después de la posición del cursor
-		     'A' para insertar al final de la linea 
-		     'o' para insertar una linea abajo de la posición del cursor
-		     'O' para insertar una linea arriba de la posición del cursor
-		     'y' copiar
-		     'd' cortar
-         'p' pegar
-         "*  con "* se puede utilizar el portapapeles del sistema, por ejemplo
-             en modo viual 'v' se puede seleccionar un texto y copiarlo con: "*y
-
-
-Nota: i para modo insertar
-      v para modo visual
+Nota: i de modo normal a modo insertar
       Esc para modo normal
+			<C-o> en modo insertar permite hacer un movimiento en modo normal
+						y después regresar al modo insertar
+      v para modo visual
       R para modo remplazar
 
+
+Modo insertar:
+
+" Para insertar texto: 'i' para insertar en la posición del cursor
+		  'a' para insertar después de la posición del cursor
+		  'A' para insertar al final de la linea 
+		  'o' para insertar una linea abajo de la posición del cursor
+		  'O' para insertar una linea arriba de la posición del cursor
+
+" Para borrar texto sin salir de modo insertar:
+			<C-h>	borrar desde el cursos un caracter
+			<C-w> borrar desde el cursor una palabra
+			<C-h> borrar desde el cursos hasta el principio de la línea actual
+
+
+Modo visual:
+
+Después de selecionar texto:
+			'y' copiar
+		  'd' cortar
+      'p' pegar
+      "*  con "* se puede utilizar el portapapeles del sistema, por ejemplo
+          en modo viual 'v' se puede seleccionar un texto y copiarlo con: "*y
+
+
+Modo normal:
+
+" Para moverse por la pantalla: 'k arriba' 'l derecha' 'j abajo' 'h izquierda'
+			'0' para moverte al principio de la linea
+			'$' para moverte al final de la linea
+			'w' para moverte al principio de la palabra siguiente
+			'e' para moverte al final de la palabra actual o la siguiente
 
 " Repetir un movimiento un movimiento o número de veces, ejemplo: 2w , d2e
 " El formato para hacerlo es: Operador [Número] Movimiento
@@ -41,45 +55,35 @@ Nota: i para modo insertar
 	            o $ para indicar que la acción tomará del cursor al final de la linea
 
 
-
 " Eliminar texto y reemplazar texto: 'x' eliminar el carácter que se encuentra encima del cursor 
-				   'd' es el comando para eliminar texto se puede usar con un 'Movimiento'
-				   'dw' que eliminará la palabra
-				   'de' que eliminará de donde está el cursor al final de esa misma palabra
-				   'd$' elimina de donde está el cursor al final de la linea
-				   'dd' elimina toda la linea
-				   'r' para reemplazar una letra
-				   'R' para entrar en modo reemplazar
-				   'c' es el comando para cambiar texto se puede usar con un 'Movimiento'
-				   'ce' eliminará de donde está el cursor al final de esa misma palabra y pasará al modo insertar
-				   'c$' eliminará donde está el cursor hasta al final de la linea y pasará al modo insertar
+			'd' es el comando para eliminar texto se puede usar con un 'Movimiento'
+			'dw' que eliminará la palabra
+			'de' que eliminará de donde está el cursor al final de esa misma palabra
+			'd$' elimina de donde está el cursor al final de la linea
+			'dd' elimina toda la linea
+			'r' para reemplazar una letra
+			'R' para entrar en modo reemplazar
+			'c' es el comando para cambiar texto se puede usar con un 'Movimiento'
+			'ce' eliminará de donde está el cursor al final de esa misma palabra y pasará al modo insertar
+			'c$' eliminará donde está el cursor hasta al final de la linea y pasará al modo insertar
 
 
-
-Deshacer acciones: 'u' para deshacer la última acción
-		   'U' para deshacer todas las acciones en una linea
-		   'Ctrl-R' para deshacer los cambios deshechos
-
-
-
-Localización del cursor: 'Ctrl-G' muestra la localización del cursos
-			 'G' mover al final del archivo
-			 '[num] G' mover al nÃºmero de fila
-			 'gg' mover al principio del archivo
+" Deshacer acciones: 
+			'u' para deshacer la última acción
+		  'U' para deshacer todas las acciones en una linea
+		  <C-E> para deshacer los cambios deshechos
 
 
-
-Búsqueda de texto: '/ [frase]' búsqueda hacia adelante en el texto
-		   '? [frase]' búsqueda hacia atras en el texto
-		   'n' siguiente ocurrencia en búsqueda en la misma dirección
-		   'N' siguiente ocurrencia en búsqueda en la dirección contraria
-		   'Ctrl-O' regresas a la posición anterior
-		   'Ctrl-I' tomas la posición siguiente
+" Localización del cursor: 
+			<C-g> muestra la localización del cursos
+			'G' mover al final del archivo
+			'[num] G' mover al nÃºmero de fila
+			'gg' mover al principio del archivo
 
 
 "Paneles y ventanas
-      sp divide el panel de manera horizontal
-      vsp divide el panel de manera vertical
+      :sp divide el panel de manera horizontal
+      :vsp divide el panel de manera vertical
       <c-w>w mover entre paneles
       <c-w>j ir al panel de abajo
       <c-w>k ir al panel de arriba
@@ -93,7 +97,6 @@ Búsqueda de texto: '/ [frase]' búsqueda hacia adelante en el texto
 Dentro de "(), [], {}" se pude presionar '%' para ir a su signo conector, es útil para debug
 
 
-
 :s/old/new        Sustituye la primera coincidencia de 'old' con 'new' en la linea del cursor
 :s/old/new/g      Sustituye todas las coincidencias de 'old' con 'new' en la linea del cursor
 :#,#s/onld/new/g  Sustituye la frase entre dos # con new
@@ -101,11 +104,9 @@ Dentro de "(), [], {}" se pude presionar '%' para ir a su signo conector, es úti
 :%s/old/new/gc    Sustituye todas las ocurrencias de 'old' en el archivo por 'new' y pregunta antes de hacer el cambio
 
 
-
 :![Comando]       Ejecutar un comando externo 
 :w [Nombre Archivo] Escribe el archivo Vim actual con el nombre
 :r 		  Escribe debajo de la posición del cursor el contenido siguiente, ejemplo: ':r [Nombre Archivo]' ':r !ls -al'
-
 
 
 :set xxx Habilitar opción xxx
@@ -114,13 +115,16 @@ Dentro de "(), [], {}" se pude presionar '%' para ir a su signo conector, es úti
 :set 'hls/nohls' resaltar todas las coincidencias en búsquedas
 
 
-
 :help  Mostrar ayuda
 Ctrl-P Ctrl-P Para saltar entre ventanas de ayuda y de edición
 :q  Para salir de la ventana de ayuda o de edición
 Ctrl-D  Para ver posibles coincidencias en menos
 
 
-
-
-
+Búsqueda de texto:
+		  '/ [frase]' búsqueda hacia adelante en el texto
+		  '? [frase]' búsqueda hacia atras en el texto
+		  'n' siguiente ocurrencia en búsqueda en la misma dirección
+		  'N' siguiente ocurrencia en búsqueda en la dirección contraria
+		  <C-O> regresas a la posición anterior
+		  'Ctrl-I' tomas la posición siguiente
