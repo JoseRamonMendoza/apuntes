@@ -1,0 +1,142 @@
+" Expresiones regulares y su implementación en JavaScript      
+
+" Introducción
+" Para crear una expresión regular se tienen 2 opciones: la notación literal
+" y utilizar un constructor; la notación literal se define entre 2 'forward slash'
+" y no utiliza comillas; a los constructores se les debe de pasar como parámetro
+" la expresión regular y los flags, se puede ver como se hace en el siguiente
+" ejemplo:
+
+let re = /ab+c/i; // literal notation
+let re = new RegExp('ab+c', 'i') // constructor with string pattern as first
+argument
+let re = new RegExp(/ab+c/, 'i') // constructor with regular expression literal
+as first argument (Starting with ECMAScript 6)
+
+
+" Se puede trabajar en JavaScript con expresiones regulares con los métodos:
+" match() y test().
+
+RegExp.test(string) // devolverá 'true' o 'false' dependiendo si expresión
+regular tiene una coincidencia en el texto.
+
+string.match(RegExp) // devolverá el texto que coincida con la expresión
+regular.
+
+
+
+" Flags
+i - el flag 'i' hará que la expresión regular ignore la capitalización, por
+ejemplo: /code/i  coincidirá con 'Code', 'cOdE', 'CODE' etc...
+
+g - al ejecutar una expresión regular esta devuelve la primera coincidencia con
+el patrón, el flag 'g - global' permite que la expresión regular devuelva todas
+las coincidencias en el texto.
+
+
+
+" Grupos y rangos
+
+| - operador 'OR', la expresión regular x|y coincidirá con x o con y.
+
+[] - los corchetes se usan para definir clases de caracteres, por ejemplo: la
+expresión regular /g[uo]n/ coincidirá solamente con 'gun' y con 'gon'
+
+[-] - dentro de los corchetes se pueden poner rangos de caracteres, por
+ejemplo: /b[a-z]l/
+
+[^] - el símbolo de exponente al principio del rango de caracteres es un
+indicados negativo, en el que las coincidencias se dan con todos aquellos
+caracteres que no son los especificados, por ejemplo: /[^aeiou]/ coincidirá con
+todos los caracteres que no sean vocales, incluyendo los espacios y caracteres
+de indentación como 'nueva linea'.
+
+\n - cuando 'n' es un entero positivo, el número hace referencia última
+subcadena que coincide con el paréntesis 'n' en la expresión regular (contando
+los paréntesis izquierdos), se utiliza para hacer coincidencias con un grupo de
+repetición que será encerrado en el paréntesis, por ejemplo:
+/apple(,)\sorange\1/ coincide con "apple, orange," en "apple, orange, cherry,
+peach".
+
+  También se puede capturar un grupo de repetición en la función replace por
+  medio del signo de dollar '$':
+
+  "Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');
+  // Returns "Camp Code"
+
+
+" Cuantificadores
+
++ - el símbolo de suma sirve para determinar si un carácter o conjunto de 
+caracteres aparecen una o más veces de manera sucesiva, por ejemplo en el texto 
+'Sisssess', la expresión regular /s+/g coincidiría en dos puntos ['sss', 'ss']
+
+* - el símbolo de multiplicación determina si un carácter o conjunto de
+caracteres aparecen 0 más veces de manera sucesiva, similar al utilizar '+',
+por ejemplo: la expresión regular /go*/ va a coincidir tanto con el texto 'g'
+como con 'gooooooooo'
+
+x{n} - cuando 'n' es un integral positivo coincide con exactamente 'n' veces
+del elemento 'x'
+
+x{n,} - cuando 'n' es un integral positivo coincide con al menos 'n'veces el
+elemento x.
+
+x{n,m} - cuando 'n' es 0 o un integral positivo, 'm' es un integral positivo,
+y 'm > n', coincide con al menos 'n' a 'm' ocurrencias del item 'x'
+
+? - las expresiones regulares buscan la coincidencia más grande dentro del
+texto, si se usa después de un cuantificador '?' se puede hacer lo contrario 
+y hacer que se busque la coincidencia más pequeña en el texto, por ejemplo en 
+el texto 'titanic', /t[a-z]*i/ la coincidencia será con 'titani', mientras que 
+en la expresión regular /t[a-z]*?i/ la coincidencia sera 'ti'
+
+x? - cuando el símbolo '?' no se usa después de un caracter que no sea un
+cuantificador hará una coincidencia con de 'x' 0 o 1 vez.
+
+" Afirmaciones 
+
+^ - el símbolo de exponente fuera de los corchetes se utiliza para que una
+expresión regular coincida con el patrón únicamente si este está al inicio del
+texto, por ejemplo: /^call/ coincidirá en el texto 'call me' pero no con el
+texto 'he called me'.
+
+$ - similar al símbolo de exponente cuando está fuera de corchetes, el símbolo
+de dolar '$' en contra posición hace que la coincidencia de la expresión
+regular solo se da sí es que se encuentra al final del texto, su notación
+también es: /regExp$/
+
+x(?=y) - conocida como aserción anticipada, esta notación regresará 'x' solo
+si a 'x' le sigue 'y'
+
+x(?!y) - conocida como aserción anticipada negativa, tiene el mismo efecto
+que la afirmación anterior pero al contrario, hace una coincidencia con 'x'
+solo si a 'x' no le sucede 'y'
+
+(?<=y)x - conocida como aserción retrospectiva, esta notación hace una
+coincidencia con 'x' solo si está precedida por 'y'
+
+(?<!y)x - conocida como aserción retrospectiva negativa, esta notación hace una
+coincidencia con 'x' solo si no le precede 'y' 
+
+
+" Clases de caracteres
+
+. - el punto o comodín se explica mejor con un ejemplo: /.un/ va a coincidir
+con "fun, gun, mun, pun, 1un, <un, @un" etc...
+
+\w - esta es una abreviatura que coincide con todas las letras minúsculas, 
+mayúsculas, números y el guión bajo, es equivalente a [A-Za-z0-9_]
+
+\W - es el opuesto del atajo anterior, es equivalente a [^A-Za-z0-9_]
+
+\d - es una abreviatura que coincide con todos los números, es equivalente
+a [0-9]
+
+\D - es el opuesto del atajo anterior, es equivalente a [^0-9]
+
+\s - es una abreviatura que coincide con todos los espacios en blanco, es
+equivalente a [ \r\t\f\n\v]
+
+\S - es el opuesto del atajo anterior, es equivalente a [^ \r\t\f\n\v]
+
