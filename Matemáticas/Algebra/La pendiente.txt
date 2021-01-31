@@ -1,0 +1,7 @@
+" Pendiente
+
+La pendiente es una medida de la inclinación de una recta.
+
+Pendiente = desplazamiento vertical/desplazamiento horizontal = Δy/Δx = delta
+y/delta x = y_2 - y_1/x_2 - x_1
+

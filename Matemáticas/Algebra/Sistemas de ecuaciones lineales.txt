@@ -1,0 +1,11 @@
+" Existen 3 formas principales de sistemas de ecuaciones lineales
+
+Pendiente ordenada al origen
+y = mx + b Donde m = pendiente, b = contante que marca la intersección con el
+    eje y
+
+Punto pendiente
+y - y_1 = m(x - x_1) Donde m = pendiente y (x_1, y_1) es un punto en la recta
+
+Estandar
+A_x + B_y = C Donde A, B y C son constantes
