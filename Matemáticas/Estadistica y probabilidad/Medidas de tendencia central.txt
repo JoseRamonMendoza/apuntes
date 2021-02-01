@@ -1,0 +1,15 @@
+" Media
+
+La media de un conjunto de números, algunas ocasiones simplemente llamada 'el
+promedio', o 'media aritmética', es la suma de los datos dividida entre el
+número total de datos.
+
+" Mediana
+
+La mediana de un conjunto de números es el número medio en el conjunto (después
+que los números han sido arreglados del menor al mayor) o, si hay un número par
+de datos la mediana es el promedio de los números medios.
+
+" Moda
+
+La moda de un conjunto de números es el número que aparece con mayor frecuencia.
