@@ -1,8 +1,9 @@
 """ Apuntes del libro 'Ingeniería de Software Somerville 9a edición'
 
-apítulo 2 - Procesos de software
+Capítulo 2 - Procesos de software
 "" Modelos de proceso de software.
 
+" El modelo en cascada.
 El modelo en cascada (waterfall): Éste toma las actividades fundamentales del
 proceso de especificación, desarrollo, validación y evolución y, luego, los
 representa como fases separadas del proceso, tal como especificación de
@@ -10,28 +11,190 @@ requerimientos, diseño de software, implementación, pruebas, etcétera.
 
   Análisis y definición de requerimientos: Los servicios, las restricciones
   y las metas del sistema se establecen mediante consulta a los usuarios el
-  sistma. Luego, se definen con detalle y sirven como una especificación de
+  sistema. Luego, se definen con detalle y sirven como una especificación de
   software y sus relaciones.
 
-  Diseño del sistema y del fostware: El proceso de diseño de sistemas asigna
+  Diseño del sistema y del software: El proceso de diseño de sistemas asigna
   los requerimientos, para sistemas de hardware o de software, al establecer
   una arquitectura de sistema global. El diseño del software implica
   identificar y describir las abstracciones fundamentales del sistema de
   software y sus relaciones.
 
   Implementación y prueba de unidad: Durante esta etapa, el diseño de software
-  se realiza como un conjuto de programas o unidades del programa. La prueba de
+  se realiza como un conjunto de programas o unidades del programa. La prueba de
   unidad consiste en verificar que cada unidad cumpla con su especificación.
   
   Integración y prueba de sistema: Las unidades del programa o los programas
   individuales se integran y prueban como un sistema completo para asegurarse
-  de que se cumplan los requerimientos de software. Depués de probarlo, se
+  de que se cumplan los requerimientos de software. Después de probarlo, se
   libera el sistema de software al cliente.
 
   Operación y mantenimiento: Por lo general (aunque no necesariamente), ésta es
   la fase más larga del ciclo de vida, donde el sistema se instala y se pone en
-  práctica. El mantenimiento incluye corregir los errores que no se detectarnon
+  práctica. El mantenimiento incluye corregir los errores que no se detectaron
   en etapas anteriores del ciclo de vida, mejorar la implementación de las
   unidades del sistema e incrementar los servicios del sistema conforme se
   descubren nuevos requerimientos.
 
+El modelo en cascada es consecuente con otros modelos del proceso de ingeniería
+y en cada fase se produce documentación. Esto hace que el proceso sea visible,
+de modelo que los administradores monitoricen el progreso contra el plan de
+desarrollo. Su principal problema es la partición inflexible del proyecto en
+distintas etapas. Tiene que establecerse compromisos en una etapa temprana del
+proceso, lo que dificulta responder a los requerimiento cambiantes del cliente.
+
+El modelo en cascada sólo debe usarse cuando los requerimientos se entienden
+bien y sea improbable el cambio radical durante el desarrollo del sistema. Sin
+embargo, el modelo en cascada refleja el tipo de proceso utilizado en otros
+proyectos de ingeniería. Como es más sencillo emplear un modelo de gestión
+común durante todo el proyecto, aún son de uso común los procesos de software
+basados en el modelo en cascada. 
+
+Una variación importante del modelo en cascada es el desarrollo de sistemas
+formales, donde se crea un modelo matemático para una especificación del
+sistema. Después se corrige este modelo, mediante transformaciones matemáticas
+que preservan su consistencia en un código ejecutable. Con base en la
+suposición de que son correctas sus transformaciones matemáticas, se puede
+aseverar, por lo tanto, que un programa generado de esta forma es consecuente
+con su especificación. 
+
+Los modelos formales de desarrollo son muy adecuados para el desarrollo de 
+sistemas que cuenten con rigurosos requerimientos de seguridad, fiabilidad o 
+protección. Los procesos basados en transformaciones formales se usan por lo
+general sólo en el desarrollo de sistemas críticos para protección o seguridad.
+Requieren experiencia especializada. Para la mayoría de los sistemas, este
+proceso no ofrece costo/beneficio significativos sobre otros enfoques en el
+desarrollo de sistemas.
+
+
+" Desarrollo incremental
+El desarrollo incremental se basa en la idea de diseñar una implementación
+inicial, exponer ésta al comentario del usuario, y luego desarrollarla en sus
+diversas versiones hasta producir un sistema adecuado. Las actividades de
+especificación, desarrollo y validación están entrelazadas en vez de separadas,
+con rápida retroalimentación a través de las actividades.
+
+El desarrollo incremental refleja la forma en que se resuelven problemas. Rara
+vez se trabaja por adelantado una solución completa del problema, más bien se
+avanza en una serie de pasos hacia una solución y se retrocede cuando se
+detecta que se cometieron errores. Al desarrollar el software de manera
+incremental, resulta más barato y fácil realizar cambios en el software
+conforme éste se diseña.
+
+Comparado con el modelo en cascada, el desarrollo incremental tiene tres
+beneficios importantes: Se reduce el costo de adaptar los requerimientos
+cambiantes del cliente; Es más sencillo obtener retroalimentación del cliente
+sobre el trabajo de desarrollo que se realizó; Es posible que sea más rápida la
+entrega e implementación de software útil al cliente.
+
+A su ves tiene dos problemas en la perspectiva administrativa: El proceso no es
+visible; La estructura del sistema tiene a degradarse conforme se tienen nuevos
+incrementos.
+
+Los problemas del desarrollo incremental se tornan particularmente agudos para
+sistemas grandes, complejos y de larga duración.
+
+
+
+" Ingeniería de software orientada a la reutilización
+Los enfoques orientados a la reutilización se apoyan en una gran base de
+componentes de software reutilizable y en la integración de marcos para la
+composición de dichos componentes. 
+
+En un enfoque orientado a la reutilización las especificaciones de
+requerimientos y la etapa de validación se comparan con otros procesos de
+software, en un proceso orientado a la reutilización, las etapas intermedias
+son diferentes:
+
+  Análisis de componentes: Dada la especificación de requerimientos, se realiza
+  una búsqueda de componentes para implementar dicha especificación.
+
+  Modificación de requerimientos: Durante esta etapa se analizan los
+  requerimientos usando información de los componentes descubiertos. Luego se
+  modifican para reflejar los componentes disponibles. Donde las modificaciones
+  son imposibles, puede regresarse a la actividad de análisis de componentes.
+
+  Diseño de sistema con reutilización: Durante esta fase se diseña el marco
+  conceptual del sistema o se reutiliza un marco conceptual existente.
+
+  Desarrollo e integración: Se diseña el software que no puede procurarse de
+  manera externa, y se integran los componentes y los sistemas COTS para crear el
+  nuevo sistema. La integración del sistema, en este modelo, puede ser parte del
+  proceso de desarrollo, en vez de una actividad independiente.
+
+La ingeniería de software orientada a la reutilización tiene la clara ventaja
+de reducir la cantidad de software a desarrollar y, por lo tanto, la de
+disminuir los costos y riesgos, también conduce a entregas más rápidas de
+software. Sin embargo, son inevitables los compromisos de requerimientos y esto
+conducirá hacia un sistema que no cubra las necesidades reales de los usuarios.
+Más aún, se pierde algo de control sobre la evolución del sistema, conforme las
+nuevas versiones de los componentes reutilizables no están bajo el control de
+la organización que los usa.
+
+
+
+" Actividades del proceso
+Recordemos que las actividades del proceso consisten en 'Especificación,
+Desarrollo, Validación y Evolución'.
+
+
+Especificación
+  Estudio de factibilidad: Se realiza una estimación sobre si las necesidades
+  identificadas del usuario cubren con las actuales tecnologías de software
+  y hardware.
+
+  Obtención y análisis de requerimientos: Éste es el proceso de derivar los
+  requerimientos del sistema mediante observación de los sistemas existentes.
+
+  Especificación de requerimientos: Analizas los requerimientos obtenidos en el
+  paso anterior para generar un documento que defina un conjunto de
+  requerimientos, se incluyen dos clases de requerimiento: de sistema y de
+  usuario.
+
+  Validación de requerimientos: Se verifica que los requerimientos sean
+  realistas, coherentes y completos, es inevitable descubrir errores en el
+  documento de requerimientos.
+
+
+Diseño e implementación del software
+  En este proceso se tiene como entrada la 'plataforma de información, la
+especificación de requerimientos, y la descripción de datos'.
+
+Las actividades de diseño que están presentes en la mayoría de casos son:
+  Diseño arquitectónico: Se identifica la estructura global del sistema.
+
+  Diseño de interfaz: Se definen las interfaces entre los componentes de
+  sistemas.
+
+  Diseño de componentes: Se toma cada componente del sistema y se diseña cómo
+  funcionará.
+  
+  Diseño de bases de datos: Donde se diseña las estructuras del sistema de
+  datos y como se representará en una base de datos.
+
+
+Validación de software
+  Pruebas de desarrollo: Las personas que desarrollan el sistema ponen a prueba
+  los componentes que construyen el sistema.
+
+  Pruebas del sistema: Los componentes del sistema se integran para crear un
+  sistema completo.
+
+  Pruebas de aceptación: Ésta es la etapa final en el proceso de pruebas,
+  antes de que el sistema se acepte para uso operacional.
+
+
+Evolución del software
+  Para enfrentarse al cambio constante hay 2 estrategias: evitar el cambio,
+crear un sistema tolerante al cambio.
+
+Estrategias para crear sistemas tolerantes al cambio son:
+  Prototipo de sistema: Se desarrolla una versión del sistema o una parte del
+  mismo, para comprobar los requerimientos del cliente y la factibilidad de
+  algunas decisiones de diseño.
+
+  Entrega incremental: Donde los incrementos del sistema se entregan al cliente
+  para su comentario y experimentación.
+
+  Refactorización: Mejorar la estructura y organización de un programa, es
+  también un mecanismo importante que apoya la tolerancia al cambio.
