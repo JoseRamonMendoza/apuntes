@@ -1,15 +1,16 @@
 " Qué es una estructura de dato?
 
-En ciencias de la computación, una estructura de datos es una forma particular
-de organizar datos en una computadora para que puedan ser utilizados de manera
-eficiente.
+(wikipedia.org,2020)'En ciencias de la computación, una estructura de datos es 
+una forma particular de organizar datos en una computadora para que puedan ser 
+utilizados de manera eficiente.'
 
 " ¿Qué es un algoritmo?
 
-En matemáticas, lógica, ciencias de la computación y disciplinas relacionadas,
+(wikpedia.org, 2020)
+'En matemáticas, lógica, ciencias de la computación y disciplinas relacionadas,
 un algoritmo es un conjunto de instrucciones o reglas definidas y no ambiguas,
 ordenadas y finitas que permite, típicamente, solucionar un problema realizar
-un cómputo, procesar datos y llevar a cabo otras tareas o actividades.
+un cómputo, procesar datos y llevar a cabo otras tareas o actividades.'
 
 " ¿Qué es un dato?
 
@@ -59,6 +60,7 @@ resta, división, multiplicación y residuo.
 
 " ¿Qué son los datos simples y los datos estructurados?
 
+(Tipos de datos, sf):
 Los datos simples son los que ocupan una sola casilla de memoria, dentro de
 este grupo se encuentran los valores booleanos, los números enteros, y los
 caracteres. Por su parte los datos estructurados se caracterizan por que con un
@@ -69,6 +71,7 @@ conjuntos, objetos, o toda estructura de datos computacional.
 
 " ¿Qué relación tienen una estructura de datos con un algoritmo?
 
+(Estructuras de datos y algorítmos en Java, sf):
 Cuando hablamos de algoritmos estamos haciendo referencia a las computaciones
 de los datos que tenemos para trabajar, cuando hablamos de estructuras de
 datos hacemos referencia a la organización y perduración de esos mismos datos
@@ -81,3 +84,18 @@ ejecución de un algoritmo se encuentra en las operaciones en memoria como
 lectura y escritura.
 
 
+" Referencias
+
+ ?. (?). Estructuras de datos y algorítmos en Java. enero 30, 2021, de 
+Programacion.net Sitio web: 
+https://programacion.net/articulo/estructuras_de_datos_y_algoritmos_en_java_309/
+
+  AA.VV. (noviembre 8, 2020). Estructura de datos. enero 30, 2020, de 
+Wikipedia.org Sitio web: https://es.wikipedia.org/wiki/Estructura_de_datos
+  
+  AA.VV.. (diciembre 2, 2020). Algoritmo. enero 30, 2021, de Wikipedia.org Sitio 
+web: https://es.wikipedia.org/wiki/Algoritmo
+ 
+  ?. (?). Tipos de datos. enero 30, 2021, de El proceso de programación Sitio 
+web:
+http://www3.uacj.mx/CGTI/CDTE/JPM/Documents/IIT/Programacion/tipos-de-datos.html
