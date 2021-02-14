@@ -1,0 +1,47 @@
+" Corriente
+Es el flujo de electrones. El movimiento de átomos cargados negativamente
+a átomos cargados positivamente.
+Representado como I
+
+"" Coulomb
+6.24 x 10^18 electrones.
+Representado como C
+
+"" Amperio
+Nombrado por el físico francés André Marie Ampere
+La corriente se mide en amperios
+Un amperio es un Coulomb pasando por un punto en un segundo
+Representado como A
+
+
+" Potencial
+La capacidad de la fuente para realizar trabajos eléctricos 
+
+"" Diferencia de potencial
+Cause el movimiento o flujo de los electrones en un circuito
+También llamado fuerza electromotriz o Voltaje
+
+"" Voltaje
+La fuera que mueve los electrones en el circuito, el voltaje causa la corriente
+Unidad de medida voltios
+Representado por V
+
+
+" Resistencia
+Oposición al flujo de electrones
+El grado de resistencia depende de la longitud, área transversal o temperatura
+Medido en ohmios
+  Nombrado por George Simos Ohm
+Representado por la letra Omega Ω
+
+
+" Sistema métrico de medición
+mega    M   10^6
+kilo    k   10^3
+mili    m   10^-3
+micro   µ   10^-6
+
+Mega Amperio (1MA = 1,000,000 amperios)
+1kA = 1,000 amperios
+1,000mA = 1 amperios
+1,000,000µA = 1 amperios

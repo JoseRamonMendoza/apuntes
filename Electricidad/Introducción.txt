@@ -1,0 +1,52 @@
+" Materia
+Todo lo que ocupa un lugar en el espacio
+Tiene peso
+
+"" Elemento
+Es cuando tenemos un conjunto de átomos de la misma especie
+
+"" Compuesto
+Cuando están formados por átomos de diferente especie
+
+
+" Partes del átomo
+Núcleo: Localizado en el centro del átomo
+Protones: Partículas cargadas positivamente dentro del núcleo
+Neutrones: Partículas sin carga dentro del núcleo
+Electrones: Partículas cargadas negativamente que orbitan el núcleo
+
+Capas:
+  Son círculos concéntricos alrededor del núcleo
+  Llenados en secuencia
+  En donde los electrones orbitan
+Capa de valencia: Capa más exterior
+Valencia de un átomo: El número de electrones contenidos en la capa de valencia
+
+
+" Características de un átomo
+Número atómico: Número de protones en el núcleo del átomo
+
+Peso atómico: La masa del átomo; Determinado por el total del número de
+protones y neutrones
+
+Valencia: Número de electrones contenidos en la capa de valencia
+
+
+" Cargas eléctricas
+Cargas opuestas se atraen, y las iguales se repelen
+
+El estado de equilibrio es cuando un átomo tiene cargas de los protones y los
+electrones iguales en fuerza pero opuestas en signo (+-)
+
+"" Ion Negativo
+Átomo cargado negativamente, cuando le agregamos electrones
+
+"" Ion Positivo
+Átomo cargado positivamente, cuando le quitamos electrones
+
+
+" Cobre
+Número atómico: 29
+Número de electrones: 29
+Número de protones: 29
+Valencia: 1

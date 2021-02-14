@@ -1,0 +1,17 @@
+" Conductores
+En un material que contiene un gran número de electrones libres
+
+Los buenos conductores tienen menos de cuatro electrones en su aniño exterior,
+valencia menor a 4; la plata es el conductor más eficiente, el cobre es el más
+usado por ser más común
+
+" Aisladores
+Impiden el flujo de electricidad, Estabilizado por la absorción de electrones
+de valencia
+
+Los elementos con valencia mayor de 4 son aisladores
+
+" Semiconductores
+Los elementos que contienen exactamente 4 electrones de valencia. La
+conductividad de estos elementos es sensible a su pureza y temperatura, un
+ejemplo es el silicio 
