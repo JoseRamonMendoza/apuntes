@@ -1,3 +1,6 @@
+
+ 
+
 " Qué es una estructura de dato?
 
 (wikipedia.org,2020)'En ciencias de la computación, una estructura de datos es 

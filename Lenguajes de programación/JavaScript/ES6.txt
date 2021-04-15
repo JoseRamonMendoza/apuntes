@@ -187,19 +187,24 @@ console.log(a, b); // 1, 2
 console.log(arr); // [3, 4, 5, 7]
 
 " También puedes deconstruir un objeto para pasarle los valores como
-" parámetros de una función.
+" parámetros de una función, para, en lugar de hacer esto:
 
-// ES5
+// ES6
 const profileUpdate = (profileData) => {
   const { name, age, nationality, location } = profileData;
   // do something with these variables
 }
+
+Reducir a esto otro:
 
 // ES6
 const profileUpdate = ({ name, age, nationality, location }) => {
   /* do something with these fields */
 }
 
+La llamada sería de igual manera:
+
+profileUpdate(profileData);
 
 
 """ Otra nueva función en ES6 son los 'template literal', es una especie

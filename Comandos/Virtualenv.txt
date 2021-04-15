@@ -1,0 +1,2 @@
+virtualenv env : Crea un entorno virtual
+source env/bin/activate : Activa el entorno virtual

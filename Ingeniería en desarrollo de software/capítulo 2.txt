@@ -38,10 +38,10 @@ requerimientos, diseño de software, implementación, pruebas, etcétera.
 
 El modelo en cascada es consecuente con otros modelos del proceso de ingeniería
 y en cada fase se produce documentación. Esto hace que el proceso sea visible,
-de modelo que los administradores monitoricen el progreso contra el plan de
-desarrollo. Su principal problema es la partición inflexible del proyecto en
-distintas etapas. Tiene que establecerse compromisos en una etapa temprana del
-proceso, lo que dificulta responder a los requerimiento cambiantes del cliente.
+que los administradores monitoricen el progreso contra el plan de desarrollo. 
+Su principal problema es la partición inflexible del proyecto en distintas 
+etapas. Tiene que establecerse compromisos en una etapa temprana del proceso, 
+lo que dificulta responder a los requerimiento cambiantes del cliente.
 
 El modelo en cascada sólo debe usarse cuando los requerimientos se entienden
 bien y sea improbable el cambio radical durante el desarrollo del sistema. Sin
