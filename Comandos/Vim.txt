@@ -97,7 +97,6 @@ Modo normal:
 "Paneles y ventanas
     :sp divide el panel de manera horizontal
     :vsp divide el panel de manera vertical
-    <c-w>w mover entre paneles
     <c-w>j ir al panel de abajo
     <c-w>k ir al panel de arriba
     <c-w>h ir al panel de la izquierda
