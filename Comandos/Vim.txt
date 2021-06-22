@@ -24,7 +24,7 @@ Modo insertar:
 	  O para insertar una linea arriba de la posición del cursor
 
 " Para borrar texto sin salir de modo insertar:
-		<C-h>	borrar desde el cursos un caracter
+		<C-u>	borrar desde el cursos un caracter
 		<C-w> borrar desde el cursor una palabra
 		<C-h> borrar desde el cursos hasta el principio de la línea actual
 
