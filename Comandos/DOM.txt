@@ -1,2 +1,0 @@
-** DOM command
-console.dir(document) : shows the DOM of the page

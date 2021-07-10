@@ -1,0 +1,186 @@
+##### Commands of kubectl
+
+## Useful commands
+RESOURCE is the Kubernetes resource type
+NAME sets the name of the resource
+FLAGS are used to provide extra configuration
+PARAMS are used to provide the required configuration to the resource
+
+kubectl create RESOURCE NAME [FLAGS]
+kubectl describe RESOURCE NAME 
+kubectl get RESOURCE NAME [-o yaml]
+kubectl edit RESOURCE NAME [-o yaml]
+kubectl label RESOURCE NAME [PARAMS]
+kubectl port-forward RESOURCE/NAME [PARAMS]
+kubectl logs RESOURCE/NAME [FLAGS]
+kubectl delete RESOURCE NAME
+
+kubectl apply -f manifest.yaml
+kubectl delete -f manifest.yaml 
+# get YAML template for a resource
+kubectl create RESOURCE [REQUIRED FLAGS] --dry-run=client -o yaml 
+
+## get the base YAML template for demo Deployment running a nxing application
+kubectl create deploy demo --image=nginx --dry-run=clinet -o yaml
+
+|
+
+## Process
+# Inspect  the endpoints for the cluster and installed add-ons 
+kubectl cluster-info
+
+# List all the nodes in the cluster. 
+# To get a more detailed view of the nodes, the `-o wide` flag can be passed
+kubectl get nodes [-o wide] 
+
+# Describe a cluster node.
+# Typical configuration: node IP, capacity (CPU and memory), a list of running pods on the node, podCIDR, etc.
+kubectl describe node {{ NODE NAME }}
+
+|
+
+## Resources part 1
+# create a Deployment resource
+# NAME - required; set the name of the deployment
+# IMAGE - required;  specify the Docker image to be executed
+# FLAGS - optional; provide extra configuration parameters for the resource
+# COMMAND and args - optional; instruct the container to run specific commands when it starts 
+kubectl create deploy NAME --image=image [FLAGS] -- [COMMAND] [args]
+
+# Some of the widely used FLAGS are:
+-r, --replicas - set the number of replicas
+-n, --namespace - set the namespace to run
+--port - expose the container port
+
+# example create a go-helloworld Deployment in namespace `test`
+kubectl create deploy go-helloworld --image=joseramonmendoza/go-helloworld:v1.0.0 -n test
+
+|
+
+# create a headless pod
+# NAME - required; set the name of the pod
+# IMAGE - required;  specify the Docker image to be executed
+# FLAGS - optional; provide extra configuration parameters for the resource
+# COMMAND and args - optional; instruct the container to run specific commands when it starts 
+kubectl run NAME --image=image [FLAGS] -- [COMMAND] [args...]
+
+# Some of the widely used FLAGS are:
+--restart - set the restart policy. Options [Always, OnFailure, Never]
+--dry-run - dry run the command. Options [none, client, server]
+-it - open an interactive shell to the container
+
+# example: create a busybox pod, with an interactive shell and a restart policy set to Never 
+kubectl run -it busybox-test --image=busybox --restart=Never
+
+|
+
+# Get deployments, ReplicaSets and Pods
+kubectl get deploy
+kubectl get rs
+kubectl get po
+
+# Edit deploy
+kubectl edit deploy {{ NAME }} -o yaml
+
+# Access an aplication locally
+kubectl port-forward {{ RESOURCE }} {{ PORTS }}
+
+|
+
+## Resources part 2
+## Create a service for an existing deployment 
+# expose a Deployment through a Service resource 
+# NAME - required; set the name of the deployment to be exposed
+# --port - required; specify the port that the service should serve on
+# --target-port - optional; specify the port on the container that the service should direct traffic to
+# FLAGS - optional; provide extra configuration parameters for the service
+kubectl expose deploy NAME --port=port [--target-port=port] [FLAGS]
+
+# Some of the widely used FLAGS are:
+--protocol - set the network protocol. Options [TCP|UDP|SCTP]
+--type - set the type of service. Options [ClusterIP, NodePort, LoadBalancer]
+
+# expose the `go-helloworld` deployment on port 8111
+# note: the application is serving requests on port 6112
+kubectl expose deploy go-helloworld --port=8111 --target-port=6112
+
+# Get services
+kubect get [svc|services]
+
+|
+
+## Resources part 3
+# create a Configmap
+# NAME - required; set the name of the configmap resource
+# FLAGS - optional; define  extra configuration parameters for the configmap
+kubectl create configmap NAME [FLAGS]
+
+# Some of the widely used FLAGS are:
+--from-file - set path to file with key-value pairs 
+--from-literal - set key-value pair from command-line 
+
+# create a Configmap to store the color value
+kubectl create configmap test-cm --from-literal=color=yellow
+
+|
+
+# create a Secret
+# NAME - required; set the name of the secret resource
+# FLAGS - optional; define  extra configuration parameters for the secret
+kubectl create secret generic NAME [FLAGS]
+
+# Some of the widely used FLAGS are:
+--from-file - set path to file with the sensitive key-value pairs 
+--from-literal - set key-value pair from command-line 
+
+# create a Secret to store the secret color value
+kubectl create secret generic test-secret --from-literal=color=blue
+
+|
+
+# create a Namespace
+# NAME - required; set the name of the Namespace
+kubectl create ns NAME
+
+# create a `test-udacity` Namespace
+kubectl create ns test-udacity
+
+# get all the pods in the `test-udacity` Namespace
+kubectl get po -n test-udacity
+
+|
+
+# Get configmap, secret
+kubectl get [cm|configmpa]
+kubectl get secrets
+kubectl get [ns|namespace]
+
+
+##### Example of a kubeconfig file 
+
+apiVersion: v1
+# define the cluster metadata 
+clusters:
+- cluster:
+    certificate-authority-data: {{ CA }}
+    server: https://127.0.0.1:63668
+  name: udacity-cluster
+# define the user details 
+users:
+# `udacity-user` user authenticates using client and key certificates 
+- name: udacity-user
+  user:
+    client-certificate-data: {{ CERT }}
+    client-key-data: {{ KEY }}
+# `green-user` user authenticates using a token
+- name: green-user
+  user:
+    token: {{ TOKEN }}
+# define the contexts 
+contexts:
+- context:
+    cluster: udacity-cluster
+    user: udacity-user
+  name: udacity-context
+# set the current context
+current-context: udacity-context

@@ -3,10 +3,10 @@
 pipenv : prefijo necesario para ejecutar acciones en pipenv, (pipenv [opción[)
 shell : genera un entorno virtual activado
 lock -r : Define versiones
-uninstall <paquete> : Desisntala paquetes
+uninstall <paquete> : Desinstala paquetes
 install <paquete> : Instala paquetes
 intall --dev : Instalar paquete en local
-intall -r <requirements.txt> : Instalar paquetes del archivo 'requirements.txt',
+intall -r <requirements.txt> : Instalar paquetes del archivo 'requirements.txt'
 -el generar un archivo con el nombre 'requirements.txt' es una convención
 ampliamente utilizada, pero no un requerimiento-.
 

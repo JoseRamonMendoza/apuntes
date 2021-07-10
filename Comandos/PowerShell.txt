@@ -1,6 +1,0 @@
-" Redes
-
-ipconfig - Muestra información de la configuración de red.
-tracert - Determina la ruta que toma un paquete de protocolo IP para alcanzar su
-destino.
-ping - Diagnostica el estado de una conexión a un servidor.
