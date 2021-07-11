@@ -1,0 +1,94 @@
+A Helm chart is composed of the following files:
+
+Chart.yaml - expose chart details, such as description, version, and dependencies
+
+templates/ folder - contains templates YAML manifests for Kubernetes resources
+
+values.yaml - default input configuration file for the chart. If no other values file is supplied, the parameters in this file will be used.
+
+
+helm-chart
+|--Chart.yaml
+|--templates
+|  |--configmap.yaml
+|  |--deployment.yaml
+|  |--namespace.yaml
+|  |--service.yaml
+|--values.yaml
+
+
+
+===========================================================
+## The chart API version
+apiVersion: v1
+## The name of the chart. 
+## In this case,  the chart name is`python-helloworld `.
+name: python-helloworld 
+## A single-sentence description of this project
+description: Install Python HelloWorld
+## A list of keywords about this project to quickly identify the chart's capabilities.
+keywords:
+- python
+- helloworld 
+## The chart version, here set to `3.7.0`
+version: 3.7.0
+## List of maintainers, their names, and method of contact
+maintainers:
+- name: kgamanji 
+  email: kgamanji@xyz.com
+
+===========================================================
+templates/
+├── deployment.yaml
+└── namespace.yaml
+
+===========================================================
+# namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ .Values.namespace.name }}
+
+
+
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: python-helloworld
+  name: python-helloworld
+  namespace: {{ .Values.namespace.name }} 
+spec:
+  replicas: {{ .Values.replicaCount }} 
+  selector:
+    matchLabels:
+      app: python-helloworld
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: python-helloworld
+    spec:
+      containers:
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: IfNotPresent 
+        name: python-helloworld
+
+===========================================================
+## provide the name of the namespace
+namespace:
+  name: test
+
+## define the image to execute with the Deployment 
+image:
+  repository:
+     pixelpotato/python-helloworld 
+  tag: v1.0.0
+
+## set the number of replicas for an application 
+replicaCount: 3

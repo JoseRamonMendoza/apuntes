@@ -72,6 +72,9 @@ kubectl run NAME --image=image [FLAGS] -- [COMMAND] [args...]
 # example: create a busybox pod, with an interactive shell and a restart policy set to Never 
 kubectl run -it busybox-test --image=busybox --restart=Never
 
+# example: create a apline pod, with an interactive shell, with name 'test-[random]', in the namespace 'defualt', and that is going to remove '--rm' after exit of the shell
+kubectl run test-$RANDOM --namespace=defualt --rm -it --image=apline -- sh 
+
 |
 
 # Get deployments, ReplicaSets and Pods
