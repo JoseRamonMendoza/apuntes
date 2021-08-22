@@ -1,0 +1,9 @@
+## Open Systems Interconnection Model 
+
+Is a conceptual model that characterises and standardises the communication 
+functions of a telecommunication or computing system without regard to its 
+underlying internal structure and technology.
+
+The communications between a computing system are split into seven different 
+abstraction layers: Physical, Data Link, Network, Transport, Session, 
+Presentation, and Application.

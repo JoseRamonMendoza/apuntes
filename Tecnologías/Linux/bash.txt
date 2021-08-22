@@ -1,0 +1,93 @@
+" Bash commands
+
+"" Navigation
+
+ls - list directory contents
+pwd - print name of current/working directory
+cd - change working directory
+pushd/popd - put working directory on a stack
+file - determine file type
+locate - find files by name
+updatedb - update database for locate
+which - locate a command
+whereis - locate the binary, source, and manual page files for a command
+history - display bash command history
+
+
+
+"" GETTING HELP
+
+whatis - display the on-line manual descriptions
+apropos - search the manual page names and descriptions
+man - an interface to the on-line reference manuals
+
+
+
+"" WORKING WITH FILES
+
+mkdir - create a directory/make directories
+touch - change file timestamps/create empty files
+cp - copy files and directories
+mv - move (rename) files
+rm - remove files or directories
+rmdir - remove empty directories
+
+
+
+"" TEXT FILES
+
+cat - concatenate files and print on the standard output
+more/less - file perusal filter for crt viewing
+nano - command line text editor
+vim - Vi Improved, a programmer's text editor
+
+
+"" USERS
+
+sudo - execute a command as superuser
+su - change user ID or become another user
+users - print the user names of users currently logged in
+
+adduser - add user or group to the system
+useradd - create a new user or update default new user information
+usermod - modify a user account
+chfn - change real user name and information
+chsh - change login shell
+deluser - remove a user or group from the system
+userdel - delete a user account and related files, has the same possibilities that the previous command
+addgroup - add a user or a group to the system
+groupadd - create a new group
+groupmod - modify a group definition on he system
+delgroup - delete a group
+groupdel - remove a user or group from the system
+gpasswd - adminiser /etc/group and /etc/gshadow
+whoami - print effective userid
+groups - print the groups a user is in
+id - print real and effective user and group IDs
+
+
+
+
+"" CHANGING FILE PERMISSIONS
+
+chmod - change permissions of a file
+
+
+
+"" KILLING PROGRAMS AND LOGGING OUT
+
+Ctrl+C - kill a running command
+killall - kill processes by name
+exit - log out of bash
+
+
+"" USEFUL SHORTCUTS
+
+Ctrl + D - signal bash that there is no more input
+Ctrl + L - redraw the screen
+Ctrl + + - make text bigger in terminal emulator
+Ctrl + - - make text smaller in terminal emulator
+
+
+"" PROGRAMS THAT I WANT TO REMEMBER
+ncdu - NCurses Disk Usage

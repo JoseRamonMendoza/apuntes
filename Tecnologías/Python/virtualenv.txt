@@ -1,0 +1,6 @@
+# Se puede utilizar (python3 -m venv venv) para crear un entorno
+# virtual, pero es preferible utlizar 'virtualenv' ya que tiene
+# más funcionalidades
+
+virtualenv env : Crea un entorno virtual
+source env/bin/activate : Activa el entorno virtual
